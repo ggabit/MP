@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63A1204A-3EEB-480E-9FCC-D6C867D4D73F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CuzicGabriela</RootNamespace>
+    <AssemblyName>CuzicGabriela</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1440.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AprovizionareReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AprovizionareReportForm.Designer.cs">
+      <DependentUpon>AprovizionareReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BalantaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BalantaForm.Designer.cs">
+      <DependentUpon>BalantaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BalDS.cs">
+      <DependentUpon>BalDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BalDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BalDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CalculeStoc.cs" />
+    <Compile Include="ClientiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientiForm.Designer.cs">
+      <DependentUpon>ClientiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BonConsumActForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BonConsumActForm.Designer.cs">
+      <DependentUpon>BonConsumActForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BonConsumVizForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BonConsumVizForm.Designer.cs">
+      <DependentUpon>BonConsumVizForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientiReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientiReportForm.Designer.cs">
+      <DependentUpon>ClientiReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsumReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsumReportForm.Designer.cs">
+      <DependentUpon>ConsumReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FacturiActForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturiActForm.Designer.cs">
+      <DependentUpon>FacturiActForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacturiVizForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturiVizForm.Designer.cs">
+      <DependentUpon>FacturiVizForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FurnizoriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FurnizoriForm.Designer.cs">
+      <DependentUpon>FurnizoriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FurnizoriReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FurnizoriReportForm.Designer.cs">
+      <DependentUpon>FurnizoriReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LucrariForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LucrariForm.Designer.cs">
+      <DependentUpon>LucrariForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LucrariReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LucrariReportForm.Designer.cs">
+      <DependentUpon>LucrariReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeniuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeniuForm.Designer.cs">
+      <DependentUpon>MeniuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PieseAutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PieseAutoForm.Designer.cs">
+      <DependentUpon>PieseAutoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PieseAutoReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PieseAutoReportForm.Designer.cs">
+      <DependentUpon>PieseAutoReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDS.cs">
+      <DependentUpon>ReportDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReprezentareGraficaStocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReprezentareGraficaStocForm.Designer.cs">
+      <DependentUpon>ReprezentareGraficaStocForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="StatDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticiAprovizionareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticiAprovizionareForm.Designer.cs">
+      <DependentUpon>StatisticiAprovizionareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticiConsumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticiConsumForm.Designer.cs">
+      <DependentUpon>StatisticiConsumForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StocInitialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StocInitialForm.Designer.cs">
+      <DependentUpon>StocInitialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StocInitialReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StocInitialReportForm.Designer.cs">
+      <DependentUpon>StocInitialReportForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AprovizionareReport.rdlc" />
+    <EmbeddedResource Include="AprovizionareReportForm.resx">
+      <DependentUpon>AprovizionareReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BalantaForm.resx">
+      <DependentUpon>BalantaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientiForm.resx">
+      <DependentUpon>ClientiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BonConsumActForm.resx">
+      <DependentUpon>BonConsumActForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BonConsumVizForm.resx">
+      <DependentUpon>BonConsumVizForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientiReport.rdlc" />
+    <EmbeddedResource Include="ClientiReportForm.resx">
+      <DependentUpon>ClientiReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsumReport.rdlc" />
+    <EmbeddedResource Include="ConsumReportForm.resx">
+      <DependentUpon>ConsumReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturiActForm.resx">
+      <DependentUpon>FacturiActForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturiVizForm.resx">
+      <DependentUpon>FacturiVizForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FurnizoriForm.resx">
+      <DependentUpon>FurnizoriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FurnizoriReport.rdlc" />
+    <EmbeddedResource Include="FurnizoriReportForm.resx">
+      <DependentUpon>FurnizoriReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LucrariForm.resx">
+      <DependentUpon>LucrariForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LucrariReport.rdlc" />
+    <EmbeddedResource Include="LucrariReportForm.resx">
+      <DependentUpon>LucrariReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeniuForm.resx">
+      <DependentUpon>MeniuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieseAutoForm.resx">
+      <DependentUpon>PieseAutoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieseAutoReport.rdlc" />
+    <EmbeddedResource Include="PieseAutoReportForm.resx">
+      <DependentUpon>PieseAutoReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReprezentareGraficaStocForm.resx">
+      <DependentUpon>ReprezentareGraficaStocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticiAprovizionareForm.resx">
+      <DependentUpon>StatisticiAprovizionareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticiConsumForm.resx">
+      <DependentUpon>StatisticiConsumForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StocInitialForm.resx">
+      <DependentUpon>StocInitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StocInitialReport.rdlc" />
+    <EmbeddedResource Include="StocInitialReportForm.resx">
+      <DependentUpon>StocInitialReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BalDS.xsc">
+      <DependentUpon>BalDS.xsd</DependentUpon>
+    </None>
+    <None Include="BalDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BalDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BalDS.xss">
+      <DependentUpon>BalDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ReportDS.xsc">
+      <DependentUpon>ReportDS.xsd</DependentUpon>
+    </None>
+    <None Include="ReportDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportDS.xss">
+      <DependentUpon>ReportDS.xsd</DependentUpon>
+    </None>
+    <None Include="StatDS.xsc">
+      <DependentUpon>StatDS.xsd</DependentUpon>
+    </None>
+    <None Include="StatDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StatDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StatDS.xss">
+      <DependentUpon>StatDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

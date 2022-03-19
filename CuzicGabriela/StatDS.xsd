@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StatDS" targetNamespace="http://tempuri.org/StatDS.xsd" xmlns:mstns="http://tempuri.org/StatDS.xsd" xmlns="http://tempuri.org/StatDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BD_ServiceAutoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BD_ServiceAutoConnectionString (Settings)" PropertyReference="ApplicationSettings.CuzicGabriela.Properties.Settings.GlobalReference.Default.BD_ServiceAutoConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ConsumPieseAutoTableAdapter" GeneratorDataComponentClassName="ConsumPieseAutoTableAdapter" Name="ConsumPieseAuto" UserDataComponentName="ConsumPieseAutoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ServiceAutoConnectionString (Settings)" DbObjectName="PieseAuto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PieseAuto.DPiesa, SUM(BonuriConsumContinut.Cantitate) AS Total
+FROM            (PieseAuto RIGHT OUTER JOIN
+                         BonuriConsumContinut ON BonuriConsumContinut.IdPiesaAuto = PieseAuto.IdPiesaAuto)
+GROUP BY PieseAuto.DPiesa
+ORDER BY SUM(BonuriConsumContinut.Cantitate) DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DPiesa" DataSetColumn="DPiesa" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AchizitiiPieseAutoTableAdapter" GeneratorDataComponentClassName="AchizitiiPieseAutoTableAdapter" Name="AchizitiiPieseAuto" UserDataComponentName="AchizitiiPieseAutoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ServiceAutoConnectionString (Settings)" DbObjectName="PieseAuto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PieseAuto.DPiesa, SUM(FacturiContinut.Cantitate) AS Total
+FROM            (PieseAuto RIGHT OUTER JOIN
+                         FacturiContinut ON FacturiContinut.IdPiesaAuto = PieseAuto.IdPiesaAuto)
+GROUP BY PieseAuto.DPiesa
+ORDER BY SUM(FacturiContinut.Cantitate) DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DPiesa" DataSetColumn="DPiesa" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="StatDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="StatDS" msprop:Generator_UserDSName="StatDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ConsumPieseAuto" msprop:Generator_TableClassName="ConsumPieseAutoDataTable" msprop:Generator_TableVarName="tableConsumPieseAuto" msprop:Generator_TablePropName="ConsumPieseAuto" msprop:Generator_RowDeletingName="ConsumPieseAutoRowDeleting" msprop:Generator_RowChangingName="ConsumPieseAutoRowChanging" msprop:Generator_RowEvHandlerName="ConsumPieseAutoRowChangeEventHandler" msprop:Generator_RowDeletedName="ConsumPieseAutoRowDeleted" msprop:Generator_UserTableName="ConsumPieseAuto" msprop:Generator_RowChangedName="ConsumPieseAutoRowChanged" msprop:Generator_RowEvArgName="ConsumPieseAutoRowChangeEvent" msprop:Generator_RowClassName="ConsumPieseAutoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DPiesa" msprop:Generator_ColumnVarNameInTable="columnDPiesa" msprop:Generator_ColumnPropNameInRow="DPiesa" msprop:Generator_ColumnPropNameInTable="DPiesaColumn" msprop:Generator_UserColumnName="DPiesa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Procent" msprop:Generator_ColumnVarNameInTable="columnProcent" msprop:Generator_ColumnPropNameInRow="Procent" msprop:Generator_ColumnPropNameInTable="ProcentColumn" msprop:Generator_UserColumnName="Procent" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AchizitiiPieseAuto" msprop:Generator_TableClassName="AchizitiiPieseAutoDataTable" msprop:Generator_TableVarName="tableAchizitiiPieseAuto" msprop:Generator_TablePropName="AchizitiiPieseAuto" msprop:Generator_RowDeletingName="AchizitiiPieseAutoRowDeleting" msprop:Generator_RowChangingName="AchizitiiPieseAutoRowChanging" msprop:Generator_RowEvHandlerName="AchizitiiPieseAutoRowChangeEventHandler" msprop:Generator_RowDeletedName="AchizitiiPieseAutoRowDeleted" msprop:Generator_UserTableName="AchizitiiPieseAuto" msprop:Generator_RowChangedName="AchizitiiPieseAutoRowChanged" msprop:Generator_RowEvArgName="AchizitiiPieseAutoRowChangeEvent" msprop:Generator_RowClassName="AchizitiiPieseAutoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DPiesa" msprop:Generator_ColumnVarNameInTable="columnDPiesa" msprop:Generator_ColumnPropNameInRow="DPiesa" msprop:Generator_ColumnPropNameInTable="DPiesaColumn" msprop:Generator_UserColumnName="DPiesa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Procent" msprop:Generator_ColumnVarNameInTable="columnProcent" msprop:Generator_ColumnPropNameInRow="Procent" msprop:Generator_ColumnPropNameInTable="ProcentColumn" msprop:Generator_UserColumnName="Procent" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
